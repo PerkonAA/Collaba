@@ -1,0 +1,20 @@
+@mixin webFont($family, $file, $weight: normal, $style: normal, $path: "public/fonts/") {
+  @font-face {
+    font-family: $family;
+    src: url("#{$path}" + "#{$file}" + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-stretch: normal;
+    font-display: swap;
+  }
+}
+
+@include webFont('Onest', 'Onest-Thin', 100);
+@include webFont('Onest', 'Onest-ExtraLight', 200);
+@include webFont('Onest', 'Onest-Light', 300);
+@include webFont('Onest', 'Onest-Regular', 400);
+@include webFont('Onest', 'Onest-Medium', 500);
+@include webFont('Onest', 'Onest-SemiBold', 600);
+@include webFont('Onest', 'Onest-Bold', 700);
+@include webFont('Onest', 'Onest-ExtraBold', 700);
+@include webFont('Onest', 'Onest-Black', 800);

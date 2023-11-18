@@ -1,0 +1,14 @@
+@mixin block-content {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 16px;
+  margin: 0 auto;
+  border-radius: $radius-large;
+  background: $dark-1;
+  color: $text-color;
+}
+
+@mixin separator {
+  border-top: 1px solid #3E4153;
+}
