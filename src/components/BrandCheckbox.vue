@@ -17,14 +17,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 label {
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --link: rgb(27, 129, 112);
+  display: block;
+  width: 44px;
+  height: 24px;
+  position: relative;
+  background: #555770;
 
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  background-color: var(--dark);
   border-radius: 50px;
   cursor: pointer;
 }
@@ -43,25 +41,24 @@ input {
 }
 
 input:checked ~ .slider {
-  background-color: var(--light);
+  background-color: $brand-color;
 }
 
 .slider::before {
+  width: 18px;
+  height: 18px;
   content: "";
   position: absolute;
-  top: 13px;
-  left: 16px;
-  width: 75px;
-  height: 75px;
+  top: 3px;
+  left: 4px;
   border-radius: 50%;
-  box-shadow: inset 28px -4px 0px 0px var(--light);
-  background-color: var(--dark);
+  box-shadow: inset 28px -4px 0px 0px #8F90A6;
   transition: 0.3s;
 }
 
 input:checked ~ .slider::before {
-  transform: translateX(95px);
-  background-color: var(--dark);
+  transform: translateX(18px);
+  background-color: white;
   box-shadow: none;
 }
 </style>

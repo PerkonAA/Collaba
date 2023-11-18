@@ -11,21 +11,36 @@
           <brand-select v-model="year" :options="yearOptions"/>
           <brand-select v-model="month" :options="monthOptions"/>
           <brand-select v-model="day" :options="dayOptions"/>
-          <select v-model="month">
-            <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>
-          </select>
-          <select v-model="day">
-            <option :key="i" v-for="i in daysCount">{{ i }}</option>
-          </select>
+<!--          <select v-model="month">-->
+<!--            <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>-->
+<!--          </select>-->
+<!--          <select v-model="day">-->
+<!--            <option :key="i" v-for="i in daysCount">{{ i }}</option>-->
+<!--          </select>-->
         </div>
         <div class="settings__row">
           <div class="form-item">
+            <span class="setting-text">Отображать возраст</span>
             <brand-checkbox></brand-checkbox>
           </div>
         </div>
 
 
         <div class="settings__subtitle">Пол</div>
+        <div class="settings__row">
+          <div class="form-item">
+            <span class="setting-text">Мужской</span>
+            <brand-radio></brand-radio>
+          </div>
+          <div class="form-item">
+            <span class="setting-text">Женский</span>
+            <brand-radio></brand-radio>
+          </div>
+          <div class="form-item">
+            <span class="setting-text">Другой</span>
+            <brand-radio></brand-radio>
+          </div>
+        </div>
         <brand-notification title="Пол будет учитываться в поиске" text="Однако его не будет видно другому пользователю без подписки">
           <icon-info/>
         </brand-notification>
@@ -44,6 +59,7 @@ import BrandCheckbox from '@/components/BrandCheckbox.vue'
 import BrandButton from '@/components/BrandButton.vue'
 import BrandSelect from '@/components/BrandSelect.vue'
 import BrandNotification from '@/components/BrandNotification.vue'
+import BrandRadio from "@/components/BrandRadio.vue";
 
 let year = ref<number>(2000)
 let month = ref<number>(1)
@@ -120,6 +136,14 @@ watch(daysCount, (val) => {
 
   padding-bottom: 36px;
 
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -156,10 +180,25 @@ watch(daysCount, (val) => {
     line-height: 24px;
   }
 
+  &__footer {
+    margin-top: 25px;
+  }
+
   .form-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
     padding: 14px 16px;
+    width: 100%;
     border-radius: $radius-small;
     background: $dark-1;
+  }
+
+  .setting-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
   }
 }
 </style>
