@@ -6,7 +6,7 @@
         <brand-button @click="firstStepBtnClick" text="Найти напарника"/>
       </div>
       <div v-if="step === 2" class="step second-step">
-        <user-search-block/>
+<!--        <user-search-block/>-->
       </div>
       <div v-if="step === 3" class="step third-step">
         <speaking-block/>
@@ -185,7 +185,7 @@
     <div class="group">
       <h2 class="group-title">Searching block</h2>
       <div class="row">
-        <user-search-block/>
+<!--        <user-search-block/>-->
       </div>
     </div>
   </div>
@@ -200,7 +200,7 @@ import IconAtom from "../components/icons/IconAtom.vue";
 import IconLike from "../components/icons/IconLike.vue";
 import IconLikeFill from "../components/icons/IconLikeFill.vue";
 import IconInfo from "../components/icons/IconInfo.vue";
-import UserSearchBlock from "../components/UserSearchBlock.vue";
+// import UserSearchBlock from "../components/UserSearchBlock.vue";
 
 export default {
   name: "ComponentsView",
@@ -219,7 +219,7 @@ export default {
     }
   },
   components: {
-    UserSearchBlock,
+    // UserSearchBlock,
     SpeakingBlock, IconInfo, IconLike, IconLikeFill, IconAtom, BrandButton, FilterButton, BrandNotification}
 }
 </script>

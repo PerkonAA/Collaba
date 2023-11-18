@@ -1,4 +1,4 @@
-@mixin webFont($family, $file, $weight: normal, $style: normal, $path: "public/fonts/") {
+@mixin webFont($family, $file, $weight: normal, $style: normal, $path: "/fonts/") {
   @font-face {
     font-family: $family;
     src: url("#{$path}" + "#{$file}" + '.ttf') format('truetype');
