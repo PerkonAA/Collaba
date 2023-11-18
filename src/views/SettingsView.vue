@@ -3,18 +3,29 @@
     <div class="settings__inner">
       <div class="settings__header">
         <div class="settings__title">Настройка профиля</div>
-        <div class="settings__subtitle">Ты вошел в систему с помощью Discord, поэтому у тебя уже есть никнейм, осталось настроить пару параметров</div>
+        <div class="settings__description">Ты вошел в систему с помощью Discord, поэтому у тебя уже есть никнейм, осталось настроить пару параметров</div>
       </div>
       <div class="settings__content">
-        <brand-select v-model="year" :options="yearOptions"/>
-        <brand-select v-model="month" :options="monthOptions"/>
-        <brand-select v-model="day" :options="dayOptions"/>
-        <select v-model="month">
-          <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>
-        </select>
-        <select v-model="day">
-          <option :key="i" v-for="i in daysCount">{{ i }}</option>
-        </select>
+        <div class="settings__subtitle">День рождения</div>
+        <div class="settings__row">
+          <brand-select v-model="year" :options="yearOptions"/>
+          <brand-select v-model="month" :options="monthOptions"/>
+          <brand-select v-model="day" :options="dayOptions"/>
+          <select v-model="month">
+            <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>
+          </select>
+          <select v-model="day">
+            <option :key="i" v-for="i in daysCount">{{ i }}</option>
+          </select>
+        </div>
+        <div class="settings__row">
+          <div class="form-item">
+            <brand-checkbox></brand-checkbox>
+          </div>
+        </div>
+
+
+        <div class="settings__subtitle">Пол</div>
         <brand-notification title="Пол будет учитываться в поиске" text="Однако его не будет видно другому пользователю без подписки">
           <icon-info/>
         </brand-notification>
@@ -29,6 +40,7 @@
 <script setup lang="ts">
 import {ref, computed, watch} from "vue";
 import IconInfo from "../components/icons/IconInfo.vue";
+import BrandCheckbox from '@/components/BrandCheckbox.vue'
 import BrandButton from '@/components/BrandButton.vue'
 import BrandSelect from '@/components/BrandSelect.vue'
 import BrandNotification from '@/components/BrandNotification.vue'
@@ -132,10 +144,22 @@ watch(daysCount, (val) => {
     margin-bottom: 8px;
   }
 
-  &__subtitle {
+  &__desctiption {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .form-item {
+    padding: 14px 16px;
+    border-radius: $radius-small;
+    background: $dark-1;
   }
 }
 </style>
