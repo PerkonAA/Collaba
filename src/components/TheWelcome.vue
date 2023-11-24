@@ -7,7 +7,16 @@
         </div>
       </div>
       <div class="welcome__settings">
-        <vue-tabs/>
+        <vue-tabs :tabs="[
+            {
+              text: 'Вход',
+              link: '/welcome-login'
+            },
+            {
+              text: 'Настройка профиля',
+              link: '/welcome-settings'
+            }
+        ]"/>
       </div>
     </div>
   </div>
