@@ -1,5 +1,5 @@
 <template>
-  <button :class="`filter-button ${type} ${active ? 'active' : ''}`">
+  <button :class="`filter-button ${type}`">
     <span v-if="text" class="filter-button__content">{{ text }}</span>
     <icon-add v-if="type === 'add'"/>
     <icon-x v-if="type === 'close'"/>
@@ -14,13 +14,11 @@ import {defineProps} from "vue";
 interface Props {
   text?: string
   type?: string
-  active?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   text: '',
-  type: 'add' || 'close' || 'toggle',
-  active: false
+  type: 'add' || 'close' || 'toggle'
 })
 </script>
 
@@ -79,7 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
       padding: 8px;
     }
 
-    &.active {
+    &[checked] {
       background-color: $dark-2;
       outline: 2px solid $brand-color;
 

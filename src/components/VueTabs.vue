@@ -59,6 +59,7 @@ let currentTabIndex = ref<number>(1);
     gap: 8px;
 
     position: relative;
+    padding-block: 12px;
 
     &-number {
       display: flex;
@@ -76,7 +77,7 @@ let currentTabIndex = ref<number>(1);
     &:before {
       content:"";
       position: absolute;
-      top: -12px;
+      top: 0;
       float: left;
       background: $default-color;
       width: 100%;
@@ -103,7 +104,7 @@ let currentTabIndex = ref<number>(1);
     display: flex;
     gap: 8px;
 
-    margin-bottom: 55px;
+    margin-top: 36px;
   }
 }
 </style>

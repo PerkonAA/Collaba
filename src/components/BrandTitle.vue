@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" class="brand-paragraph" v-html="text"/>
+  <component :is="tag" class="brand-title" v-html="text"/>
 </template>
 
 <script setup lang="ts">
@@ -11,28 +11,27 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  tag: 'p',
+  tag: 'h1',
   text: ''
 })
 </script>
 
 <style scoped lang="scss">
-.brand-paragraph {
+.brand-title {
   color: $light-4;
   font-family: $font-brand;
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
+  font-weight: 700;
+  line-height: normal;
 
-  &.size-16 {
-    font-size: 16px;
-    line-height: 20px;
+  &.size-18 {
+    font-size: 18px;
+    line-height: 24px;
   }
 
-  &.size-12 {
-    font-size: 12px;
-    line-height: normal;
+  &.weight-700 {
+    font-weight: 700;
   }
 
   &.weight-500 {
@@ -40,11 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
   }
 
   &.weight-400 {
-    font-weight: 400;
-  }
-
-  &.color-dark-3 {
-    color: $dark-3;
-  }
+     font-weight: 400;
+   }
 }
 </style>

@@ -56,6 +56,19 @@ body {
   margin: 0 auto;
 }
 
+.inner-container {
+  max-width: 1044px;
+  margin-inline: auto;
+}
+
+.mt-40 {
+  margin-top: 160px;
+}
+
+.mb-40 {
+  margin-bottom: 160px;
+}
+
 a {
   color: $brand-color;
   text-decoration: none;

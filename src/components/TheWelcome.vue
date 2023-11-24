@@ -66,7 +66,10 @@ const props = withDefaults(defineProps<Props>(), {
   }
 
   &__banner {
-    flex: 19;
+    //flex: 19;
+    max-width: 60%;
+    min-width: 60%;
+    max-height: calc(100vh - 48px);
     background: url("../assets/images/welcome-banner.png");
     background-size: cover;
     border-radius: 20px;
@@ -74,7 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
 
   &__settings {
     display: flex;
-    flex: 11;
+    //flex: 11;
   }
 }
 </style>

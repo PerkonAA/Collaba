@@ -166,6 +166,7 @@ watch(daysCount, (val) => {
     line-height: normal;
 
     margin-bottom: 8px;
+    margin-top: 55px;
   }
 
   &__desctiption {

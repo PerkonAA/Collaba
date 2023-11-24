@@ -37,6 +37,7 @@ const slots = useSlots()
   align-items: center;
   gap: 8px;
   height: fit-content;
+  width: 100%;
 
   border-radius: 12px;
   border: none;
