@@ -1,5 +1,5 @@
 <template>
-  <label class="container">
+  <label class="brand-radio">
     <input type="radio" checked="checked" name="radio">
     <span class="checkmark"></span>
   </label>
@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 /* The container */
-.container {
+.brand-radio {
   display: block;
   position: relative;
   width: 20px;
@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
 }
 
 /* Hide the browser's default radio button */
-.container input {
+.brand-radio input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -35,22 +35,22 @@ const props = withDefaults(defineProps<Props>(), {
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+  height: 20px;
+  width: 20px;
+  background-color: $dark-2;
   border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.brand-radio:hover input ~ .checkmark {
   background-color: #555770;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #3E7BFA;
+.brand-radio input:checked ~ .checkmark {
+  background-color: $brand-color;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -61,14 +61,14 @@ const props = withDefaults(defineProps<Props>(), {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.brand-radio input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
-  top: 8px;
-  left: 8px;
+.brand-radio .checkmark:after {
+  top: 5.5px;
+  left: 5.5px;
   width: 10px;
   height: 10px;
   border-radius: 50%;

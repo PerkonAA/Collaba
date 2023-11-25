@@ -30,7 +30,7 @@ const updateValue = (event) => {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 select {
   color: var(--text-text-secondary, #8F90A6);
   font-family: Onest;
@@ -44,5 +44,11 @@ select {
   border: none;
   height: 44px;
   width: fit-content;
+}
+
+.light {
+  select {
+    background: $dark-6;
+  }
 }
 </style>

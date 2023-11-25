@@ -7,7 +7,7 @@
       </div>
       <div class="settings__content">
         <div class="settings__subtitle">День рождения</div>
-        <div class="settings__row">
+        <div class="settings__row row">
           <brand-select v-model="year" :options="yearOptions"/>
           <brand-select v-model="month" :options="monthOptions"/>
           <brand-select v-model="day" :options="dayOptions"/>
@@ -18,7 +18,7 @@
 <!--            <option :key="i" v-for="i in daysCount">{{ i }}</option>-->
 <!--          </select>-->
         </div>
-        <div class="settings__row">
+        <div class="settings__row row">
           <div class="form-item">
             <span class="setting-text">Отображать возраст</span>
             <brand-checkbox></brand-checkbox>
@@ -27,7 +27,7 @@
 
 
         <div class="settings__subtitle">Пол</div>
-        <div class="settings__row">
+        <div class="settings__row row">
           <div class="form-item">
             <span class="setting-text">Мужской</span>
             <brand-radio></brand-radio>
@@ -136,14 +136,6 @@ watch(daysCount, (val) => {
 
   padding-bottom: 36px;
 
-  &__row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
-  }
-
   &__inner {
     display: flex;
     flex-direction: column;
@@ -183,17 +175,6 @@ watch(daysCount, (val) => {
 
   &__footer {
     margin-top: 25px;
-  }
-
-  .form-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 14px 16px;
-    width: 100%;
-    border-radius: $radius-small;
-    background: $dark-1;
   }
 
   .setting-text {

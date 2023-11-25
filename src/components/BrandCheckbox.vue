@@ -22,6 +22,7 @@ label {
   height: 24px;
   position: relative;
   background: #555770;
+  user-select: none;
 
   border-radius: 50px;
   cursor: pointer;

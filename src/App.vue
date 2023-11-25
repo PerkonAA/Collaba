@@ -74,6 +74,70 @@ a {
   text-decoration: none;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__title {
+    margin-bottom: 8px;
+  }
+}
+
+.game-card {
+  width: 140px;
+  height: 174px;
+  background: $dark-4;
+  border-radius: 8px;
+}
+
+.separator {
+  @include separator();
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.inner-wrapper {
+  border-radius: 16px;
+  background: $bg-color;
+  padding: 16px;
+  width: 100%;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  border-radius: $radius-small;
+  background: $dark-1;
+}
+
+.light {
+  .form-item {
+    background: $dark-6;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
 
 //header {
 //  line-height: 1.5;

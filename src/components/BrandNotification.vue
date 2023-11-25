@@ -1,14 +1,14 @@
 <template>
-  <div class="brand-notification">
+  <div :class="`brand-notification ${type ? 'brand-notification_' + type : ''}`">
     <div class="brand-notification__wrapper">
-      <div class="brand-notification__icon">
+      <div v-if="!isDefault" class="brand-notification__icon">
         <slot></slot>
       </div>
       <div class="brand-notification__content">
         <div v-if="title" class="brand-notification__title">{{title}}</div>
         <div v-if="text" class="brand-notification__text">{{text}}</div>
       </div>
-      <div class="brand-notification__close">
+      <div v-if="!isDefault" class="brand-notification__close">
         <icon-x/>
       </div>
     </div>
@@ -16,22 +16,29 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps} from "vue";
+import {computed, defineProps} from "vue";
 import IconX from "../components/icons/IconX.vue";
 
 interface Props {
   title?: string
   text?: string
+  type?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: '',
   text: ''
 })
+
+const isDefault = computed(() => {
+  return props.type === 'default'
+})
 </script>
 
 <style lang="scss">
 .brand-notification {
+  $self: &;
+
   padding: 16px;
   border-radius: $radius-large;
   border: 1px solid #3E4153;
@@ -98,6 +105,10 @@ const props = withDefaults(defineProps<Props>(), {
     &:hover {
       color: $text-color;
     }
+  }
+
+  &_default {
+    background: transparent;
   }
 }
 </style>

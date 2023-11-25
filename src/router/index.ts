@@ -37,6 +37,11 @@ const router = createRouter({
       component: () => import('../views/SearchView.vue')
     },
     {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue')
+    },
+    {
       path: '/components',
       name: 'components',
       // route level code-splitting

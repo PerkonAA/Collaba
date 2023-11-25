@@ -30,6 +30,11 @@ const props = withDefaults(defineProps<Props>(), {
     line-height: 20px;
   }
 
+  &.size-14 {
+    font-size: 14px;
+    line-height: normal;
+  }
+
   &.size-12 {
     font-size: 12px;
     line-height: normal;
