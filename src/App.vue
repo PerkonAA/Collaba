@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import WebRTC from "@/components/WebRTC.vue";
+import HeaderApp from "@/components/HeaderApp.vue";
 </script>
 
 <template>
@@ -20,6 +21,7 @@ import WebRTC from "@/components/WebRTC.vue";
 <!--  </header>-->
 
 <!--  <WebRTC/>-->
+  <header-app class="container" :links="[{link: '/search', text: 'Поиск напарника'}, {link: '/my-teammate', text: 'Мои напарники'}]"/>
   <div class="container">
     <RouterView />
   </div>

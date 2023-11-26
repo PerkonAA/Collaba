@@ -1,0 +1,7 @@
+<template>
+  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle opacity="0.2" cx="10.3636" cy="10" r="8" fill="#E53535"/>
+    <circle opacity="0.3" cx="10.3636" cy="10" r="6" fill="#E53535"/>
+    <circle cx="10.3636" cy="10" r="4" fill="#E53535"/>
+  </svg>
+</template>
