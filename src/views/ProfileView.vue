@@ -2,7 +2,7 @@
   <div class="inner-container mt-40 mb-40">
     <div class="profile light">
       <div class="profile__title page-title">
-        <brand-title text="Поиск напарника"/>
+        <brand-title text="Профиль"/>
       </div>
       <div class="profile__content">
         <div class="profile__inner-wrapper inner-wrapper">

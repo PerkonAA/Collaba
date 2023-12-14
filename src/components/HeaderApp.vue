@@ -31,7 +31,10 @@
           <a href="https://discord.com/" class="header__discord-link"></a>
         </div>
         <div class="header__avatar-wrapper">
-          <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">
+          <RouterLink to="/profile">
+            <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">
+          </RouterLink>
+<!--          <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">-->
         </div>
       </div>
     </div>
@@ -74,6 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding-inline: 80px;
   }
 
   &__navigation {
