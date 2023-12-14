@@ -52,6 +52,7 @@ let currentTabIndex = ref<number>(1);
   $self: &;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   &__tab {
     display: flex;

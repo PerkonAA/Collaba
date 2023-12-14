@@ -101,6 +101,7 @@ const isDefault = computed(() => {
     display: flex;
     margin-left: 8px;
     cursor: pointer;
+    height: fit-content;
 
     &:hover {
       color: $text-color;

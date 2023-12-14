@@ -77,6 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
 
   &__settings {
     display: flex;
+    width: 100%;
     //flex: 11;
   }
 }

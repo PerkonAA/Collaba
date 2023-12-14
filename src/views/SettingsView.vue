@@ -8,9 +8,9 @@
       <div class="settings__content">
         <div class="settings__subtitle">День рождения</div>
         <div class="settings__row row">
-          <brand-select v-model="year" :options="yearOptions"/>
-          <brand-select v-model="month" :options="monthOptions"/>
-          <brand-select v-model="day" :options="dayOptions"/>
+          <brand-select data-year v-model="year" :options="yearOptions"/>
+          <brand-select data-mounth v-model="month" :options="monthOptions"/>
+          <brand-select data-day v-model="day" :options="dayOptions"/>
 <!--          <select v-model="month">-->
 <!--            <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>-->
 <!--          </select>-->
@@ -181,6 +181,15 @@ watch(daysCount, (val) => {
     font-size: 16px;
     font-weight: 500;
     line-height: normal;
+  }
+
+  [data-mounth] {
+    flex: 3;
+  }
+
+  [data-day],
+  [data-year] {
+    flex: 1;
   }
 }
 </style>

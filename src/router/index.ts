@@ -37,13 +37,15 @@ const router = createRouter({
     {
       path: '/search',
       name: 'search',
-      component: () => import('../views/SearchView.vue')
+      component: () => import('../views/SearchView.vue'),
+      meta: {
+        layout: 'layout-with-header',
+      },
     },
     {
       path: '/profile',
       name: 'profile',
       component: () => import('../views/ProfileView.vue'),
-      layout: 'layout-with-header',
       meta: {
         layout: 'layout-with-header',
       },
