@@ -13,7 +13,7 @@
           @click="currentTabIndex = index+1"
       >
         <div class="tabs__tab-number">
-          <brand-paragraph class="color-white size-12 weight-500" :text="index+1"/>
+          <brand-paragraph class="color-white size-12 weight-500" :text="index+1 + ''"/>
         </div>
         <brand-paragraph class="color-white size-16 weight-400" :text="tab.text"/>
       </RouterLink>

@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import {useRouter, RouterLink, RouterView, useRoute} from 'vue-router'
 import WebRTC from "@/components/WebRTC.vue";
 import HeaderApp from "@/components/HeaderApp.vue";
+import {computed} from "vue";
+
+const layout = computed(() => {
+  //Вернем имя шаблона из роута или дефолтное значение
+  //(шаблон для страниц, для которых мы не указали шаблон)
+  const router = useRouter()
+  const currentRouteLayout = computed(() => router.currentRoute.value.meta.layout)
+  return currentRouteLayout.value || "layout-with-header"
+})
 </script>
 
 <template>
@@ -21,10 +30,14 @@ import HeaderApp from "@/components/HeaderApp.vue";
 <!--  </header>-->
 
 <!--  <WebRTC/>-->
-  <header-app class="container" :links="[{link: '/search', text: 'Поиск напарника'}, {link: '/my-teammate', text: 'Мои напарники'}]"/>
-  <div class="container">
-    <RouterView />
-  </div>
+<!--  <header-app class="container" :links="[{link: '/search', text: 'Поиск напарника'}, {link: '/my-teammate', text: 'Мои напарники'}]"/>-->
+<!--  <div class="container">-->
+<!--    <RouterView />-->
+<!--  </div>-->
+  <!--Динамический компонент-->
+  <component :is="layout">
+    <router-view/>
+  </component>
 
 </template>
 

@@ -8,6 +8,9 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        layout: 'default-layout',
+      },
       children: [
         {
           path: 'welcome-login',
@@ -39,7 +42,11 @@ const router = createRouter({
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/ProfileView.vue')
+      component: () => import('../views/ProfileView.vue'),
+      layout: 'layout-with-header',
+      meta: {
+        layout: 'layout-with-header',
+      },
     },
     {
       path: '/components',
@@ -48,8 +55,16 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/ComponentsView.vue')
+    },
+    {
+      path: '/my-teammate',
+      name: 'components',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ComponentsView.vue')
     }
   ]
-})
+} as any)
 
 export default router

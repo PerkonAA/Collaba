@@ -151,6 +151,7 @@ const slots = useSlots()
 
   &.round {
     border-radius: 50%;
+    width: fit-content;
 
     svg {
       width: 24px;
