@@ -1,12 +1,14 @@
 <template>
   <select :value="modelValue" @input="updateValue">
-    <option
-        @click="updateValue"
-        :key="i" v-for="(option, i) in options"
-        :value="option.value ? option.value : ''"
-    >
-      {{ option.text }}
-    </option>
+    <template v-if="options">
+      <option
+          @click="updateValue"
+          :key="i" v-for="(option, i) in options"
+          :value="option.value ?? ''"
+      >
+        {{ option.text }}
+      </option>
+    </template>
   </select>
 </template>
 

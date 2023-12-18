@@ -11,12 +11,6 @@
           <brand-select data-year v-model="year" :options="yearOptions"/>
           <brand-select data-mounth v-model="month" :options="monthOptions"/>
           <brand-select data-day v-model="day" :options="dayOptions"/>
-<!--          <select v-model="month">-->
-<!--            <option :key="i" v-for="i in 12" :value="i - 1">{{ new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) }}</option>-->
-<!--          </select>-->
-<!--          <select v-model="day">-->
-<!--            <option :key="i" v-for="i in daysCount">{{ i }}</option>-->
-<!--          </select>-->
         </div>
         <div class="settings__row row">
           <div class="form-item">
@@ -80,7 +74,7 @@ const yearOptions = computed(() => {
 
 const monthOptions = computed(() => {
   let options = []
-  for (let i = 1; i < 13; i++) {
+  for (let i = 1; i <= 12; i++) {
     let option = {
       value: i - 1,
       text: new Date(0, i - 1).toLocaleDateString('ru-RU', { month: 'long' }) + ''
@@ -93,33 +87,24 @@ const monthOptions = computed(() => {
 
 const dayOptions = computed(() => {
   let options = []
-  let daysCount = year.value !== null && month.value !== null
-      ? new Date(year.value, month.value + 1, 0).getDate()
-      : 0
 
-  for (let i = 1; i < daysCount + 1; i++) {
+  for (let i = 1; i < daysCount.value + 1; i++) {
     let option = {
       value: i,
       text: i
     }
-  // @section('content')
+
     options.push(option)
   }
   return options;
 })
 
-const daysCount = computed(() => {
-  // console.log(this)
-  // const { year, month } = this;
+const daysCount = computed(():Number => {
   return year.value !== null && month.value !== null
-      ? new Date(year.value, month.value + 1, 0).getDate()
+      ? new Date(+year.value, +month.value + 1, 0).getDate()
       : 0;
 })
-const date = computed(() => {
-  return year.value !== null && month.value !== null && day.value !== null
-      ? new Date(year.value, month.value, day.value)
-      : null;
-})
+
 watch(daysCount, (val) => {
   if (day.value) {
     day.value = Math.min(day.value, val);
