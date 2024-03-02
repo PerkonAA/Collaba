@@ -30,12 +30,37 @@
           <brand-paragraph class="size-14 weight-500" text="Сообщество в Discord"/>
           <a href="https://discord.com/" class="header__discord-link"></a>
         </div>
-        <div class="header__avatar-wrapper">
-          <RouterLink to="/profile">
-            <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">
-          </RouterLink>
-<!--          <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">-->
+        <div class="header__profile">
+          <div class="header__avatar-wrapper">
+            <RouterLink to="/profile">
+<!--              <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">-->
+            </RouterLink>
+            <!--          <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">-->
+          </div>
+          <div class="header__profile-dropdown profile-dropdown">
+            <div class="profile-dropdown__header">
+              <div class="header__avatar-wrapper">
+                <RouterLink to="/profile">
+<!--                  <img class="header__avatar" src="src/assets/images/welcome-banner.png" alt="avatar">-->
+                </RouterLink>
+              </div>
+              <brand-paragraph class="size-14 weight-500" text="Ancientsad"/>
+            </div>
+            <div class="separator"></div>
+            <div class="profile-dropdown__subscribe">
+              <div class="profile-dropdown__subscribe-text-wrapper">
+                <brand-title tag="h3" class="size-18 weight-500" text="День рождения"/>
+
+              </div>
+              <div class="profile-dropdown__subscribe-controls"></div>
+            </div>
+            <div class="separator"></div>
+            <div class="profile-dropdown__options"></div>
+            <div class="separator"></div>
+            <div class="profile-dropdown__footer"></div>
+          </div>
         </div>
+
       </div>
     </div>
   </header>
@@ -155,6 +180,40 @@ const props = withDefaults(defineProps<Props>(), {
   &__avatar {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  &__profile-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+}
+
+.profile-dropdown {
+  border-radius: 12px;
+  background: $bg-color;
+
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.15);
+
+  &__header {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__subscribe {
+    padding: 12px 16px;
+  }
+
+  &__options,
+  &__footer {
+    padding: 8px;
+  }
+
+  .separator {
+    margin: 0;
   }
 }
 </style>

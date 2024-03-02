@@ -70,7 +70,7 @@ const props = withDefaults(defineProps<Props>(), {
     max-width: 60%;
     min-width: 60%;
     max-height: calc(100vh - 48px);
-    background: url("../assets/images/welcome-banner.png");
+    //background: url("../assets/images/welcome-banner.png");
     background-size: cover;
     border-radius: 20px;
   }

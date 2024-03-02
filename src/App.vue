@@ -2,7 +2,14 @@
 import {useRouter, RouterLink, RouterView, useRoute} from 'vue-router'
 import WebRTC from "@/components/WebRTC.vue";
 import HeaderApp from "@/components/HeaderApp.vue";
-import {computed} from "vue";
+import {computed, onMounted, ref} from "vue";
+
+const route = useRoute();
+const router = useRouter();
+const authenticated = ref(false);
+const username = ref('');
+const userid = ref('');
+const avatarid = ref('');
 
 const layout = computed(() => {
   //Вернем имя шаблона из роута или дефолтное значение
@@ -11,6 +18,32 @@ const layout = computed(() => {
   const currentRouteLayout = computed(() => router.currentRoute.value.meta.layout)
   return currentRouteLayout.value || "layout-with-header"
 })
+
+// onMounted(async () => {
+//   // TODO: сохранение сессии почитать
+//   if (route.params.authToken === undefined) {
+//     // Render index view
+//     authenticated.value = false;
+//     await router.push('/welcome-login')
+//   } else {
+//     // Grab the token
+//     const localToken = route.params.authToken;
+//     // Use the token to query user information
+//     const response = await discordapi.GetDiscordUserDetails(localToken);
+//     if (response.id) {
+//       // Open the Index page and pass the username over
+//       // TODO: запихнуть переменные в store
+//       authenticated.value = true;
+//       username.value = response.username;
+//       userid.value = response.id;
+//       avatarid.value = response.avatar;
+//       await router.push('/welcome-settings')
+//     } else {
+//       authenticated.value = false;
+//       await router.push('/welcome-login')
+//     }
+//   }
+// });
 </script>
 
 <template>
