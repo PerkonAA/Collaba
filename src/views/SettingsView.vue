@@ -6,6 +6,7 @@
         <div class="settings__description">Ты вошел в систему с помощью Discord, поэтому у тебя уже есть никнейм, осталось настроить пару параметров</div>
       </div>
       <div class="settings__content">
+        <text-card title="Mind22" description="Другой пользователь увидит никнейм только после взаимного лайка"/>
         <div class="settings__subtitle">День рождения</div>
         <div class="settings__row row">
           <brand-select data-year v-model="year" :options="yearOptions"/>
@@ -54,6 +55,7 @@ import BrandButton from '@/components/BrandButton.vue'
 import BrandSelect from '@/components/BrandSelect.vue'
 import BrandNotification from '@/components/BrandNotification.vue'
 import BrandRadio from "@/components/BrandRadio.vue";
+import TextCard from "@/components/TextCard.vue";
 
 let year = ref<number>(2000)
 let month = ref<number>(1)
