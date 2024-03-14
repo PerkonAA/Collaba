@@ -6,49 +6,64 @@
       </div>
       <div class="profile__content">
         <div class="profile__inner-wrapper inner-wrapper">
-          <div class="filters__title">
-            <brand-title tag="h3" class="size-18 weight-500" text="День рождения"/>
-          </div>
-          <div class="filters">
-            <div class="filters__row row">
-              <date-control/>
+          <text-card class="light" title="Mind22" description="Другой пользователь увидит никнейм только после взаимного лайка"/>
+          <div class="profile__row">
+            <div class="filters__title">
+              <brand-title tag="h3" class="size-18 weight-500" text="День рождения"/>
             </div>
-            <div class="filters__row row">
-              <checkbox-control>
-                <brand-paragraph class="size-16 weight-500" text="Отображать возраст"/>
-              </checkbox-control>
+            <div class="filters">
+              <div class="filters__row row">
+                <date-control/>
+              </div>
+              <div class="filters__row row">
+                <checkbox-control>
+                  <brand-paragraph class="size-16 weight-500" text="Отображать возраст"/>
+                </checkbox-control>
+              </div>
             </div>
           </div>
+
           <div class="separator"></div>
 
-          <div class="filters__title">
-            <brand-title tag="h3" class="size-18 weight-500" text="Пол"/>
+          <div class="profile__row">
+            <div class="filters__title">
+              <brand-title tag="h3" class="size-18 weight-500" text="Пол"/>
+            </div>
+            <div class="filters">
+              <radio-control>
+                <brand-paragraph class="size-16 weight-500" text="Мужской"/>
+              </radio-control>
+              <radio-control>
+                <brand-paragraph class="size-16 weight-500" text="Женский"/>
+              </radio-control>
+              <radio-control>
+                <brand-paragraph class="size-16 weight-500" text="Другой"/>
+              </radio-control>
+            </div>
           </div>
-          <div class="filters">
-            <radio-control>
-              <brand-paragraph class="size-16 weight-500" text="Мужской"/>
-            </radio-control>
-            <radio-control>
-              <brand-paragraph class="size-16 weight-500" text="Женский"/>
-            </radio-control>
-            <radio-control>
-              <brand-paragraph class="size-16 weight-500" text="Другой"/>
-            </radio-control>
-          </div>
+
           <div class="separator"></div>
-          <div class="filters__title title-wrapper">
-            <brand-title tag="h3" class="size-18 weight-500" text="Любимые игры"/>
-            <brand-paragraph class="size-14 weight-400 color-dark-3" text="4/8"/>
+
+          <div class="profile__row">
+            <div class="filters__title title-wrapper">
+              <brand-title tag="h3" class="size-18 weight-500" text="Любимые игры"/>
+              <brand-paragraph class="size-14 weight-400 color-dark-3" text="4/8"/>
+            </div>
+            <div class="filters">
+              <filter-button v-for="(filter, index) in filtersGames"
+                             :key="index"
+                             :type="filter.type"
+                             :text="filter.text"
+                             :checked="filter.checked"
+                             :disabled="filter.disabled"
+              />
+            </div>
           </div>
-          <div class="filters">
-            <filter-button v-for="(filter, index) in filtersGames"
-                           :key="index"
-                           :type="filter.type"
-                           :text="filter.text"
-                           :checked="filter.checked"
-                           :disabled="filter.disabled"
-            />
-          </div>
+
+          <div class="separator"></div>
+
+          <brand-button color="primary" text="Сохранить" size="size-l"/>
+
           <brand-notification
               class="profile__brand-notification"
               type="default"
@@ -70,6 +85,8 @@ import {ref} from "vue";
 import CheckboxControl from "@/components/controls/CheckboxControl.vue";
 import DateControl from "@/components/controls/DateControl.vue";
 import RadioControl from "@/components/controls/RadioControl.vue";
+import TextCard from "@/components/TextCard.vue";
+import BrandButton from "@/components/BrandButton.vue";
 
 type TFilter = {
   buttonType?: string,
@@ -144,8 +161,9 @@ const filtersSex = ref<Array<TFilter>>([
     margin-inline: auto;
   }
 
-  &__brand-notification {
-    margin-top: 24px;
+  &__inner-wrapper {
+    background: $bg-color;
+    padding: 16px;
   }
 }
 </style>

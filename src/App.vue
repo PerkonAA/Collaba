@@ -156,9 +156,14 @@ a {
 
 .inner-wrapper {
   border-radius: 16px;
-  background: $bg-color;
-  padding: 16px;
+
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: auto;
 }
 
 .form-item {

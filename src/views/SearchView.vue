@@ -28,7 +28,7 @@
         </div>
         <div class="search__col search__col_2">
           <div class="search__inner-wrapper inner-wrapper">
-            <div class="search__filters filters-wrapper">
+            <div class="search__row">
               <div class="filters__title">
                 <brand-title tag="h3" class="size-18 weight-500" text="Платформа"/>
               </div>
@@ -41,7 +41,11 @@
                                :disabled="filter.disabled"
                 />
               </div>
-              <div class="separator"></div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="search__row">
               <div class="filters__title">
                 <brand-title tag="h3" class="size-18 weight-500" text="Возраст напарника"/>
               </div>
@@ -54,7 +58,11 @@
                                :disabled="filter.disabled"
                 />
               </div>
-              <div class="separator"></div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="search__row">
               <div class="filters__title">
                 <brand-title tag="h3" class="size-18 weight-500" text="Пол напарника"/>
               </div>
@@ -67,8 +75,10 @@
                                :disabled="filter.disabled"
                 />
               </div>
-              <div class="separator"></div>
             </div>
+
+            <div class="separator"></div>
+
             <brand-button text="Найти напарника" color="primary"/>
           </div>
         </div>
@@ -172,6 +182,9 @@ const filtersSex = ref<Array<TFilter>>([
       display: flex;
       flex-direction: column;
       gap: 12px;
+
+      background: $bg-color;
+      padding: 16px;
     }
   }
 

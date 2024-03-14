@@ -51,6 +51,22 @@ const router = createRouter({
       },
     },
     {
+      path: '/speaking',
+      name: 'speaking',
+      component: () => import('../views/SpeakingView.vue'),
+      meta: {
+        layout: 'layout-with-header',
+      },
+    },
+    {
+      path: '/my-partners',
+      name: 'my-partners',
+      component: () => import('../views/MyPartnersView.vue'),
+      meta: {
+        layout: 'layout-with-header',
+      },
+    },
+    {
       path: '/components',
       name: 'components',
       // route level code-splitting

@@ -53,6 +53,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 .speaking-block {
   @include block-content();
+  width: 100%;
 
   &__separator {
     @include separator();
